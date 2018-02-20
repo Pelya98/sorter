@@ -1,31 +1,32 @@
 class Sorter {
   constructor() {
-    let a= 0;
+ this.mass=[];
+
   }
 
   add(element) {
-    // your implementation
+this.mass.push(element);
   }
 
   at(index) {
-    // your implementation
+return this.mass[index];
   }
 
   get length() {
-    // your implementation
+return this.mass.length;
+
   }
 
   toArray() {
-    // your implementation
+return this.mass;
   }
 
   sort(indices) {
-    // your implementation
+
   }
 
   setComparator(compareFunction) {
-    // your implementation
+
   }
 }
-
 module.exports = Sorter;
