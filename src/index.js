@@ -1,8 +1,12 @@
 class Sorter {
     constructor() {
         this.mass = [];
+        this.a =function (a,b) {
+            return a-b;
+        };
 
     }
+
 
     add(element) {
         this.mass.push(element);
@@ -26,9 +30,7 @@ class Sorter {
         for (let i = 0; i < indices.length; i++) {
             res_mass.push(this.mass[indices[i]]);
         }
-        res_mass.sort(function (a, b) {
-            return a - b;
-        });
+        res_mass.sort(this.a);
 
         if (indices[0] < indices[1])
             for (let i = 0; i < indices.length; i++) {
@@ -43,8 +45,16 @@ class Sorter {
     }
 
     setComparator(compareFunction) {
+        {
+            if (compareFunction)
+                return this.a = compareFunction;
+            else
+                return this.a;
 
 
-    }
+        }
+
+
+
 }
-module.exports = Sorter;
+}module.exports = Sorter;
